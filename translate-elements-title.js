@@ -85,11 +85,39 @@ const titles_documents_ES = [
     'FAQ, Soluciones, Tutoriales y Entrenamientos'
 ];
 
+//Títulos em Italiano
+const titles_documents_IT = [
+    'Italiano',//título para teste
+    'Inizia qui',
+    'FAQ, Tutorial e Formazione',
+    'Guida rapida',
+    '', //não é mais utilizado no Orbix
+    '', //não é mais utilizado no Orbix
+    '', //não é mais utilizado no Orbix
+    'Manuale di Integrazione',
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Kubo
+    '', //somente no Print
+    '', //somente no Print
+    'Soluzione dei problemi',
+    'Visione generale',
+    'Utilizzare NDD Orbix',
+    'FAQ, Soluzioni, Tutorial e Formazione'
+];
+
 const html_titles = document.querySelectorAll("h3.tile__headline > a");
 
 function getLanguageFromURL(url) {
     if (url.includes('/?l=en')) return 'en';
     if (url.includes('/?l=es')) return 'es';
+    if (url.includes('/?l=it')) return 'it';
     return 'default';
 }
 
@@ -106,6 +134,9 @@ function translateTitles(html_element) {
                     break;
                 case 'es':
                     html_element.innerText = titles_documents_ES[i];
+                    break;
+                case 'it':
+                    html_element.innerText = titles_documents_IT[i];
                     break;
                 default:
                     break;

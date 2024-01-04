@@ -9,7 +9,7 @@ const categories_PT = [
     'Manuais',//categoria para teste
     'Guias',
     'Ferramentas',
-    'Desenvolvedor'
+    'Developer'
 ];
 
 //Categorias em Ingles
@@ -25,7 +25,15 @@ const categories_ES = [
     'Manuales',//categoria para teste
     'Guías',
     'Herramientas',
-    ''
+    'Developer'
+];
+
+//Categorias em Italiano
+const categories_IT = [
+    'Manuali',//categoria para teste
+    'Guide',
+    'Strumenti',
+    'Developer'
 ];
 
 const html_categories = document.querySelectorAll(".portal__content__heading h2");
@@ -33,6 +41,7 @@ const html_categories = document.querySelectorAll(".portal__content__heading h2"
 function getLanguageFromURL(url) {
     if (url.includes('/?l=en')) return 'en';
     if (url.includes('/?l=es')) return 'es';
+    if (url.includes('/?l=it')) return 'it';
     return 'default';
 }
 
@@ -49,6 +58,9 @@ function translateCategories(html_element) {
                     break;
                 case 'es':
                     html_element.innerText = categories_ES[i];
+                    break;
+                case 'it':
+                    html_element.innerText = categories_IT[i];
                     break;
                 default:
                     break;
